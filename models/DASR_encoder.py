@@ -45,7 +45,7 @@ class BaseEncoder(nn.Module):
         return fea, out
 
 class DegradationEncoder(nn.Module):
-    def __init__(self):
+    def __init__(self, training=True):
         super(DegradationEncoder, self).__init__()
         # Encoder 하이퍼 파라미터 설정
         # K - queue size, number of negative keys (default: 6554)
@@ -56,7 +56,7 @@ class DegradationEncoder(nn.Module):
         self.m = 0.999
         self.T = 0.07
 
-        self.training = True
+        self.training = training
 
         # queue, key encoder 지정
         self.encoder_q = BaseEncoder()
