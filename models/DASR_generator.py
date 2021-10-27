@@ -218,16 +218,16 @@ class DegradationSR(nn.Module):
 
 class DASR(nn.Module):
     """ DASR 네트워크 클래스 """
-    def __init__(self):
+    def __init__(self, training=True):
         super(DASR, self).__init__()
 
         # Generator 설정
         self.G = DegradationSR()
 
         # Encoder 설정
-        self.E = DegradationEncoder()
+        self.E = DegradationEncoder(training)
 
-        self.training = True
+        self.training = training
 
     def forward(self, x):
         if self.training:
