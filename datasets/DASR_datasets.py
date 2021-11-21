@@ -65,7 +65,7 @@ class MultiScaleSRDataset(torch.utils.data.Dataset):
         # self.opt = opt
 
         # 이미지 리스트 불러오기
-        self.image_path = "/workspace/Image/FFHQ-100"
+        self.image_path = "/workspace/Image/DIV2K+Flickr2K"
         self.img_list = [x for x in os.listdir(self.image_path) if check_image(x)]
 
         self.train = True
@@ -80,6 +80,7 @@ class MultiScaleSRDataset(torch.utils.data.Dataset):
 
         # HR 이미지 생성
         # HR = preprocesses(image)
+        # return torch.stack(HR, 0)
         return torch.stack(hr_tensor, 0)
 
     def __len__(self):

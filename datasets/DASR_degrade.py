@@ -188,7 +188,7 @@ class Gaussin_Kernel(object):
                  lambda_1=0.2, lambda_2=4.0, theta=0, lambda_min=0.2, lambda_max=4.0):
         # 옵션 등록
         self.kernel_size = kernel_size
-        self.blur_type = "aniso_gaussian"#blur_type
+        self.blur_type = "aniso_gaussian" # blur_type
 
         self.sig = sig
         self.sig_min = sig_min
